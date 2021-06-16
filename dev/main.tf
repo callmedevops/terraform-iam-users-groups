@@ -7,5 +7,6 @@ module "iam_users" {
   source = "../modules/iam/users"
 }
 module "iam_group" {
-  source = "../modules/iam/groups"
+    source = "../modules/iam/groups"
+    admin_user = module.iam_users.user_name_admin
 }
