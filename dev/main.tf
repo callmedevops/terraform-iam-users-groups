@@ -3,6 +3,9 @@ provider "aws" {
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
 }
-module "iam_users_and_group" {
-  source = "../modules/"
+module "iam_users" {
+  source = "../modules/iam/users"
+}
+module "iam_group" {
+  source = "../modules/iam/groups"
 }
