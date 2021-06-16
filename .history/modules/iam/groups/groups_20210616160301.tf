@@ -27,7 +27,8 @@ resource "aws_iam_group_policy_attachment" "group_name_policy_attachment" {
 resource "aws_iam_group_membership" "group_name_team" {
   name = "tf-testing-group-membership"
   users = [
-    aws_iam_user.admin.name,
+    # aws_iam_user.admin.name,
+    module.iam_users.aws_iam_user.admin.name,
   ]
   group = aws_iam_group.group_name.name
 }
