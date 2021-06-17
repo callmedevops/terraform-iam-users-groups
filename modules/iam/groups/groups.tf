@@ -1,4 +1,4 @@
-
+variable "admin_user"{}
 resource "aws_iam_group" "group_name" {
   name = "group_name"
 }
@@ -29,4 +29,4 @@ resource "aws_iam_group_membership" "group_name_team" {
   users = [var.admin_user,]
   group = aws_iam_group.group_name.name
 }
-variable "admin_user"{}
+
